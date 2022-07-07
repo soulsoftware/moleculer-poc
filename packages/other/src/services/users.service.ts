@@ -3,7 +3,6 @@ import { EMAIL_CONSTRAINT, ID_CONSTRAINT, PASSWORD_CONSTRAINT, USERNAME_CONSTRAI
 
 export default class UserService extends Service {
 	private DbMixin = new DbConnection("users").start();
-
 	// @ts-ignore
 	public constructor(public broker: ServiceBroker, schema: ServiceSchema<{}> = {}) {
 		super(broker);

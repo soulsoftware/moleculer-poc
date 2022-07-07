@@ -1,7 +1,7 @@
 import { Service, ServiceBroker, Context } from "moleculer";
 
 export default class GreeterService extends Service {
-
+	// @ts-ignore
 	public constructor(public broker: ServiceBroker) {
 		super(broker);
 		this.parseServiceSchema({

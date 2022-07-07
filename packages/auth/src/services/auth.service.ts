@@ -4,7 +4,7 @@ import { EMAIL_CONSTRAINT, PASSWORD_CONSTRAINT, USERNAME_CONSTRAINT } from "@and
 let regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
 export default class AuthService extends Service {
-
+	// @ts-ignore
 	public constructor(public broker: ServiceBroker) {
 		super(broker);
 		this.parseServiceSchema({

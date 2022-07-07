@@ -62,19 +62,6 @@ export default class ApiService extends Service {
 			},
 
 			methods: {
-				// /**
-				//  * Authenticate the request. It checks the `Authorization` token value in the request header.
-				//  * Check the token value & resolve the user by the token.
-				//  * The resolved user will be available in `ctx.meta.user`
-				//  *
-				//  * PLEASE NOTE, IT'S JUST AN EXAMPLE IMPLEMENTATION. DO NOT USE IN PRODUCTION!
-				//  *
-				//  * @param {Context} ctx
-				//  * @param {any} route
-				//  * @param {IncomingMessage} req
-				//  * @returns {Promise}
-				// */
-
 				async authenticate(ctx: Context, route: any, req: IncomingMessage): Promise<any> {
 					// Read the token from header
 					if (!NO_TOKEN_VALIDATION_URLS.includes(req.url!!)) {
@@ -87,30 +74,6 @@ export default class ApiService extends Service {
 					}
 					return {};
 				},
-
-				// /**
-				//  * Authorize the request. Check that the authenticated user has right to access the resource.
-				//  *
-				//  * PLEASE NOTE, IT'S JUST AN EXAMPLE IMPLEMENTATION. DO NOT USE IN PRODUCTION!
-				//  *
-				//  * @param {Context} ctx
-				//  * @param {Object} route
-				//  * @param {IncomingMessage} req
-				//  * @returns {Promise}
-				// */
-
-				// async authorize(ctx: Context<any, { user: string; }>, route: Record<string, undefined>, req: IncomingMessage): Promise<any> {
-				// 	// Get the authenticated user.
-				// 	const user = ctx.meta.user;
-
-				// 	// It check the `auth` property in action schema.
-				// 	// @ts-ignore
-				// 	if (req.$action.auth === "required" && !user) {
-				// 		throw new ApiGateway.Errors.UnAuthorizedError("NO_RIGHTS", {
-				// 			error: "Unauthorized",
-				// 		});
-				// 	}
-				// },
 			},
 		});
 	}
