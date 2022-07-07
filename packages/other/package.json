@@ -1,0 +1,34 @@
+{
+  "name": "@andreadelligatti/lerna-moleculer-other",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Andrea <andrea.delligatti96@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "engines": {
+    "node": ">= 10.x.x"
+  },
+  "scripts": {
+    "build": "tsc --project .",
+    "dev": "ts-node ./node_modules/moleculer/bin/moleculer-runner.js --hot --repl --env --config src/moleculer.config.ts services/**/*.service.ts",
+    "start": "moleculer-runner --env --config build/moleculer.config.js"
+  },
+  "dependencies": {
+    "@andreadelligatti/lerna-moleculer-common": "^1.0.0",
+    "@types/node": "^18.0.3",
+    "moleculer": "^0.14.21",
+    "moleculer-web": "^0.10.4",
+    "nats": "^2.7.1",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "moleculer-repl": "^0.7.1",
+    "ts-node": "^10.8.2"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@andreadelligatti/lerna-moleculer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init": "npm install",
+    "postinit": "npm run bootstrap",
+    "clean": "lerna clean -y",
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "start": "lerna run start",
+    "dev": "lerna run dev",
+    "precompose:build": "npm run build",
+    "compose:build": "docker-compose up --build",
+    "compose": "docker-compose up",
+    "key": "node generatekey.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^5.1.6",
+    "nx": "^14.4.2"
+  }
+}

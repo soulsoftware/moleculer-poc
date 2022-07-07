@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"noImplicitAny": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"sourceMap": false,
+		"pretty": true,
+		"declaration": true,
+		"strict": true,
+		"target": "ES2015",
+		"outDir": "./build",
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"include": [
+		"./**/*"
+	],
+	"exclude": [
+		"node_modules/**/*",
+		"build"
+	]
+}

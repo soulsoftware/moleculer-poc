@@ -1,0 +1,13 @@
+docker-compose.yml
+**/.Dockerfile
+node_modules
+test
+.vscode
+**/*.env
+generateKey.js
+LICENSE
+coverage
+k8s.yaml
+*.rest
+.editorconfig
+*.md

@@ -1,0 +1,28 @@
+{
+  "name": "@andreadelligatti/lerna-moleculer-common",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Andrea <andrea.delligatti96@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "./build/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "engines": {
+    "node": ">= 10.x.x"
+  },
+  "scripts": {
+    "build": "tsc --project ."
+  },
+  "dependencies": {
+    "@types/node": "^18.0.3",
+    "moleculer": "^0.14.21",
+    "moleculer-db": "^0.8.18",
+    "moleculer-db-adapter-mongo": "^0.4.14",
+    "typescript": "^4.7.4"
+  }
+}

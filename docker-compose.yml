@@ -1,0 +1,113 @@
+version: "3.3"
+
+services:
+
+  api:
+    build:
+      dockerfile: other.Dockerfile
+      context: .
+    image: microservices-other
+    env_file: docker-compose.env
+    environment:
+      SERVICES: api
+      PORT: 3000
+    depends_on:
+      - nats
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api-gw.rule=PathPrefix(`/`)"
+      - "traefik.http.services.api-gw.loadbalancer.server.port=3000"
+    networks:
+      - internal
+    scale: 2
+
+  auth:
+    build:
+      dockerfile: auth.Dockerfile
+      context: .
+    image: microservices-auth
+    env_file: docker-compose.env
+    environment:
+      SERVICES: auth
+    depends_on:
+      - nats
+    networks:
+      - internal
+    scale: 1
+
+  token:
+    build:
+      dockerfile: auth.Dockerfile
+      context: .
+    image: microservices-auth
+    env_file: docker-compose.env
+    environment:
+      SERVICES: token
+      PRIVATE_JWT_KEY: your_secret
+    depends_on:
+      - nats
+    networks:
+      - internal
+    scale: 1
+
+  users:
+    build:
+      dockerfile: other.Dockerfile
+      context: .
+    image: microservices-other
+    env_file: docker-compose.env
+    environment:
+      SERVICES: users      
+      MONGO_URI: mongodb://mongo/microservices
+    depends_on:
+      - nats
+    networks:
+      - internal
+    scale: 1
+
+  greeter:
+    build:
+      dockerfile: other.Dockerfile
+      context: .
+    image: microservices-other
+    env_file: docker-compose.env
+    environment:
+      SERVICES: greeter
+    depends_on:
+      - nats
+    networks:
+      - internal
+    scale: 2
+
+  mongo:
+    image: mongo:4
+    volumes:
+      - data:/data/db
+    networks:
+      - internal
+
+  nats:
+    image: nats:2
+    networks:
+      - internal
+
+  traefik:
+    image: traefik:v2.1
+    command:
+      # - "--api.insecure=true" # Don't do that in production!
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+    ports:
+      - 3000:80
+      # - 3001:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - internal
+      - default
+
+networks:
+  internal:
+
+volumes:
+  data:
