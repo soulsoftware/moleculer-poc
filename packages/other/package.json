@@ -1,5 +1,5 @@
 {
-  "name": "@andreadelligatti/lerna-moleculer-other",
+  "name": "@soulsoftware/moleculer-poc-other",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Andrea <andrea.delligatti96@gmail.com>",
@@ -16,11 +16,11 @@
   },
   "scripts": {
     "build": "tsc --project .",
-    "dev": "ts-node ./node_modules/moleculer/bin/moleculer-runner.js --hot --repl --env --config src/moleculer.config.ts services/**/*.service.ts",
+    "dev": "ts-node ./node_modules/moleculer/bin/moleculer-runner.js --hot --repl --env --config src/moleculer.config.ts src/services/**/*.service.ts",
     "start": "moleculer-runner --env --config build/moleculer.config.js"
   },
   "dependencies": {
-    "@andreadelligatti/lerna-moleculer-common": "^1.0.0",
+    "@soulsoftware/moleculer-poc-common": "^1.0.0",
     "@types/node": "^18.0.3",
     "moleculer": "^0.14.21",
     "moleculer-web": "^0.10.4",

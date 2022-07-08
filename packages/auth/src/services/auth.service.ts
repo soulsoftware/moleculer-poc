@@ -1,5 +1,5 @@
 import { Service, ServiceBroker, Context, Errors } from "moleculer";
-import { EMAIL_CONSTRAINT, PASSWORD_CONSTRAINT, USERNAME_CONSTRAINT } from "@andreadelligatti/lerna-moleculer-common";
+import { EMAIL_CONSTRAINT, PASSWORD_CONSTRAINT, USERNAME_CONSTRAINT } from "@soulsoftware/moleculer-poc-common";
 
 let regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 

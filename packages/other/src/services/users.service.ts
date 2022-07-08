@@ -1,5 +1,5 @@
 import { Context, Service, ServiceBroker, ServiceSchema } from "moleculer";
-import { EMAIL_CONSTRAINT, ID_CONSTRAINT, PASSWORD_CONSTRAINT, USERNAME_CONSTRAINT, DbConnection } from "@andreadelligatti/lerna-moleculer-common";
+import { EMAIL_CONSTRAINT, ID_CONSTRAINT, PASSWORD_CONSTRAINT, USERNAME_CONSTRAINT, DbConnection } from "@soulsoftware/moleculer-poc-common";
 
 export default class UserService extends Service {
 	private DbMixin = new DbConnection("users").start();

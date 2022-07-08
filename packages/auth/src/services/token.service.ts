@@ -1,7 +1,7 @@
 import { Context, Service, ServiceBroker, ServiceSchema } from "moleculer";
 import ApiGateway from "moleculer-web";
 import jwt from "jsonwebtoken";
-import { ID_CONSTRAINT } from "@andreadelligatti/lerna-moleculer-common";
+import { ID_CONSTRAINT } from "@soulsoftware/moleculer-poc-common";
 
 export default class TokenService extends Service {
 	// @ts-ignore
